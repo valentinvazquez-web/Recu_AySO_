@@ -22,9 +22,7 @@ git config --global user.name "valentinvazquez-web"
 git remote -v
 git add README.md
 git commit -m "ADD: README con datos del alumno"
-whoami
 ls
-ls -la ~
 sudo mkdir -p /datos/{textos/{libros,revistas},videos/{peliculas,series}}
 sudo ls -R /datos
 cat > Punto_A.sh <<'EOF'
