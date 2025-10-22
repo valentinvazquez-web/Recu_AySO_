@@ -1,0 +1,144 @@
+git clone https://github.com/sofiasartori/UTN-FRA_SO_Examenes
+ls
+cd UTN-FRA_SO_Examenes
+./script_Precondicion.sh
+chmod +x script_Precondicion.sh
+./script_Precondicion.sh
+source ~/.bashrc
+cd ~
+git clone https://github.com/valentinvazquez-web/Recu_TP_AySO_.git
+git config --global credential.helper store
+nano ~/.git-credentials
+cat ~/.git-credentials
+git clone https://github.com/valentinvazquez-web/Recu_TP_AySO_.git
+git clone https://github.com/valentinvazquez-web/Recu_AySO_.git
+cd Recu_TP_AySO_
+cd ~
+cd Recu_TP_AySO_
+git clone https://github.com/valentinvazquez-web/Recu_AySO_.git
+cd Recu_AySO_
+cat > README.md <<EOF
+Alumno: Valentín Vázquez
+Comisión: 116
+Turno: Mañana
+EOF
+
+git add README.md
+git commit -m "ADD: README con datos del alumno"
+git config --global user.email "valentinvazquez1105@gmail.com"
+git config --global user.name "valentinvazquez-web"
+--global
+git remove -v
+git remote -v
+git add README.md
+git commit -m "ADD: README con datos del alumno"
+whoami
+ls
+ls -
+ls -la ~
+sudo mkdir -p /datos/{textos/{libros,revistas},videos/{peliculas,series}}
+sudo ls -R /datos
+cat > Punto_A.sh <<'EOF'
+sudo mkdir -p /datos/{textos/{libros,revistas},videos/{peliculas,series}}
+echo "Estructura creada en /datos"
+EOF
+
+chmod +x Punto_A.sh
+git add Punto_A.sh
+git commit -m "ADD: Punto A - estructura simétrica"
+sudo groupadd -f p1c1_2024_g1
+sudo useradd -m -s /bin/bash -g p1c1_2024_g1 p1c1_2024_u1
+echo "p1c1_2024_u1:clave1" | sudo chpasswd
+sudo chown -R p1c1_2024_u1:p1c1_2024_g1 /datos
+sudo chmod -R 750 /datos
+sudo -u p1c1_2024_u1 bash -c 'whoami > /datos/validar1.txt'
+sudo cat /datos/validar1.txt
+cat > Punto_B.sh <<'EOF'
+sudo groupadd -f p1c1_2024_g1
+sudo useradd -m -s /bin/bash -g p1c1_2024_g1 p1c1_2024_u1
+echo "p1c1_2024_u1:clave1" | sudo chpasswd
+sudo chown -R p1c1_2024_u1:p1c1_2024_g1 /datos
+sudo chmod -R 750 /datos
+
+sudo -u p1c1_2024_u1 bash -c 'whoami > /datos/validar1.txt'
+EOF
+
+chmod +x Punto_B.sh
+git add Punto_B.sh
+git commit -m "ADD: Punto B - usuarios y permisos básicos"
+sudo groupadd -f p1c1_2024_Todos
+sudo useradd -m -s /bin/bash -g p1c1_2024_Todos p1c1_2024_u2
+echo "p1c1_2024_u2:clave1" | sudo chpasswd
+sudo usermod -aG p1c1_2024_Todos p1c1_2024_u1
+sudo chgrp -R p1c1_2024_Todos /datos
+sudo chmod -R 770 /datos
+sudo chmod o+x /datos
+sudo chmod o-r /datos/* 2>/dev/null
+sudo -u p1c1_2024_u2 bash -c 'id >> /datos/validar1.txt'
+sudo cat /datos/validar1.txt
+cat > Punto_C.sh <<'EOF'
+sudo groupadd -f p1c1_2024_Todos
+sudo useradd -m -s /bin/bash -g p1c1_2024_Todos p1c1_2024_u2
+echo "p1c1_2024_u2:clave1" | sudo chpasswd
+sudo usermod -aG p1c1_2024_Todos p1c1_2024_u1
+sudo chgrp -R p1c1_2024_Todos /datos
+sudo chmod -R 770 /datos
+sudo chmod o+x /datos
+sudo chmod o-r /datos/* 2>/dev/null
+sudo -u p1c1_2024_u2 bash -c 'id >> /datos/validar1.txt'
+EOF
+
+chmod +x Punto_C.sh
+git add Punto_C.sh
+git commit -m "ADD: Punto C - usuarios y permisos parte2"
+mkdir -p ~/Ejercicio_D/{rx/{lotes_{1..20},extras_{1..100}},tx/lotes_{1..20}}
+echo "Estructura creada en ~/Ejercicio_D"
+tree ~/Ejercicio_D --noreport | pr -T -s' ' -w 80 --column 4
+apt install tree
+find ~/Ejercicio_D
+cat > Punto_D.sh <<'EOF'
+ mkdir -p ~/Ejercicio_D/{rx/{lotes_{1..20},extras_{1..100}},tx/lotes_{1..20}}
+find ~/Ejercicio_D
+EOF
+
+chmod +x Punto_D.sh
+git add Punto_D.sh
+git commit -m "ADD: Punto D - estructura asimétrica"
+mkdir -p ~/Punto_E
+grep "MemTotal" /proc/meminfo > ~/Punto_E/Filtro_basico.txt
+grep "model name" /proc/cpuinfo | head -1 >> ~/Punto_E/Filtro_basico.txt
+echo "Archivo Filtro_basico.txt creado en ~/Punto_E"
+cat > Punto_E.sh <<'EOF'
+mkdir -p ~/Punto_E
+grep "MemTotal" /proc/meminfo > ~/Punto_E/Filtro_basico.txtc
+grep "model name" /proc/cpuinfo | head -1 >> ~/Punto_E/Filtro_basico.txt
+EOF
+
+chmod +x Punto_E.sh
+git add Punto_E.sh
+git commit -m "ADD: Punto E - filtros básicos"
+mkdir -p ~/Punto_F
+echo "Mi ip publica es: $(curl -s ifconfig.me)" > ~/Punto_F/Filtro_Avanzado.txt
+cpu=$(grep "model name" /proc/cpuinfo | head -1 | awk -F ':' '{print $2}')
+cho "CPU Modelo:$cpu" >> ~/Punto_F/Filtro_Avanzado.txt
+echo "CPU Modelo:$cpu" >> ~/Punto_F/Filtro_Avanzado.txt
+echo "Archivo Filtro_Avanzado.txt creado en ~/Punto_F"
+cat > Punto_F.sh <<'EOF'
+ mkdir -p ~/Punto_F
+ echo "Mi ip publica es: $(curl -s ifconfig.me)" > ~/Punto_F/Filtro_Avanzado.txt
+cpu=$(grep "model name" /proc/cpuinfo | head -1 | awk -F ':' '{print $2}')
+ echo "CPU Modelo:$cpu" >> ~/Punto_F/Filtro_Avanzado.txt
+echo "Archivo Filtro_Avanzado.txt creado en ~/Punto_F"
+EOF
+
+chmod +x Punto_F.sh
+git add Punto_F.sh
+git commit -m "ADD: Punto F - filtros avanzados"
+cat Filtro_Avanzado.txt
+cat ~/Punto_F/Filtro_Avanzado.txt
+chmod +x ~/Punto_F.sh
+git commit -m "ADD: Punto F - filtros avanzados"
+git push
+history -a
+cp ~/.bash_history ~/Recu_TP_AySO/Historial_comandos_Vazquez.txt
+git add Historial_comandos_Vazquez.txt
