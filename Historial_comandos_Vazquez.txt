@@ -125,5 +125,6 @@ git commit -m "ADD: Punto F - filtros avanzados"
 
 history -a
 cp ~/.bash_history ~/Recu_TP_AySO/Historial_comandos_Vazquez.txt
-git add Historial_comandos_Vazquez.txt
+git add .
 git commit -m "ADD: Historial de comandos de Vazquez"
+git push
