@@ -6,14 +6,6 @@ chmod +x script_Precondicion.sh
 ./script_Precondicion.sh
 source ~/.bashrc
 cd ~
-git clone https://github.com/valentinvazquez-web/Recu_TP_AySO_.git
-git config --global credential.helper store
-cat ~/.git-credentials
-git clone https://github.com/valentinvazquez-web/Recu_TP_AySO_.git
-git clone https://github.com/valentinvazquez-web/Recu_AySO_.git
-cd Recu_TP_AySO_
-cd ~
-cd Recu_TP_AySO_
 git clone https://github.com/valentinvazquez-web/Recu_AySO_.git
 cd Recu_AySO_
 cat > README.md <<EOF
@@ -27,13 +19,11 @@ git commit -m "ADD: README con datos del alumno"
 git config --global user.email "valentinvazquez1105@gmail.com"
 git config --global user.name "valentinvazquez-web"
 --global
-git remove -v
 git remote -v
 git add README.md
 git commit -m "ADD: README con datos del alumno"
 whoami
 ls
-ls -
 ls -la ~
 sudo mkdir -p /datos/{textos/{libros,revistas},videos/{peliculas,series}}
 sudo ls -R /datos
@@ -92,12 +82,11 @@ git add Punto_C.sh
 git commit -m "ADD: Punto C - usuarios y permisos parte2"
 mkdir -p ~/Ejercicio_D/{rx/{lotes_{1..20},extras_{1..100}},tx/lotes_{1..20}}
 echo "Estructura creada en ~/Ejercicio_D"
-tree ~/Ejercicio_D --noreport | pr -T -s' ' -w 80 --column 4
-apt install tree
 find ~/Ejercicio_D
 cat > Punto_D.sh <<'EOF'
  mkdir -p ~/Ejercicio_D/{rx/{lotes_{1..20},extras_{1..100}},tx/lotes_{1..20}}
-find ~/Ejercicio_D
+ echo "Estructura creada en ~/Ejercicio_D"
+ find ~/Ejercicio_D
 EOF
 
 chmod +x Punto_D.sh
@@ -119,25 +108,22 @@ git commit -m "ADD: Punto E - filtros básicos"
 mkdir -p ~/Punto_F
 echo "Mi ip publica es: $(curl -s ifconfig.me)" > ~/Punto_F/Filtro_Avanzado.txt
 cpu=$(grep "model name" /proc/cpuinfo | head -1 | awk -F ':' '{print $2}')
-cho "CPU Modelo:$cpu" >> ~/Punto_F/Filtro_Avanzado.txt
 echo "CPU Modelo:$cpu" >> ~/Punto_F/Filtro_Avanzado.txt
 echo "Archivo Filtro_Avanzado.txt creado en ~/Punto_F"
 cat > Punto_F.sh <<'EOF'
  mkdir -p ~/Punto_F
  echo "Mi ip publica es: $(curl -s ifconfig.me)" > ~/Punto_F/Filtro_Avanzado.txt
-cpu=$(grep "model name" /proc/cpuinfo | head -1 | awk -F ':' '{print $2}')
+ cpu=$(grep "model name" /proc/cpuinfo | head -1 | awk -F ':' '{print $2}')
  echo "CPU Modelo:$cpu" >> ~/Punto_F/Filtro_Avanzado.txt
-echo "Archivo Filtro_Avanzado.txt creado en ~/Punto_F"
+ echo "Archivo Filtro_Avanzado.txt creado en ~/Punto_F"
 EOF
 
+cat ~/Punto_F/Filtro_Avanzado.txt
 chmod +x Punto_F.sh
 git add Punto_F.sh
 git commit -m "ADD: Punto F - filtros avanzados"
-cat Filtro_Avanzado.txt
-cat ~/Punto_F/Filtro_Avanzado.txt
-chmod +x ~/Punto_F.sh
-git commit -m "ADD: Punto F - filtros avanzados"
-git push
+
 history -a
 cp ~/.bash_history ~/Recu_TP_AySO/Historial_comandos_Vazquez.txt
 git add Historial_comandos_Vazquez.txt
+git commit -m "ADD: Historial de comandos de Vazquez"
