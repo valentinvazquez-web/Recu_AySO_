@@ -8,7 +8,6 @@ source ~/.bashrc
 cd ~
 git clone https://github.com/valentinvazquez-web/Recu_TP_AySO_.git
 git config --global credential.helper store
-nano ~/.git-credentials
 cat ~/.git-credentials
 git clone https://github.com/valentinvazquez-web/Recu_TP_AySO_.git
 git clone https://github.com/valentinvazquez-web/Recu_AySO_.git
